@@ -16,7 +16,7 @@
 // You connect to it like this:
 
 
-const mongoose = require("mongoose")   // to comnnect with cliuster and inside clusrtter make the db and connect with tham 
+const mongoose = require("mongoose")   // to comnnect with cliuster and inside clusrtter make the db and connect with thaem
 
 async function connectDB() {
     try {
