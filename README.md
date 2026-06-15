@@ -1,18 +1,16 @@
 # MongoDB Notes API
 
-A REST API for creating, reading, updating, and deleting notes with Express and MongoDB.
-
-This project builds on an in-memory API by adding persistent storage through Mongoose.
+A small REST API for managing notes with Express, MongoDB, and Mongoose.
 
 ## Features
 
-- Create and list notes
-- Update a note description by MongoDB document ID
-- Delete a note by MongoDB document ID
-- MongoDB persistence through Mongoose
-- Environment-based database configuration
+- Create a note
+- List all notes
+- Update a note by document ID
+- Delete a note by document ID
+- Configure the database through environment variables
 
-## Getting started
+## Setup
 
 ```bash
 git clone https://github.com/BhaskarJadhav/Backendproject2.git
@@ -20,36 +18,37 @@ cd Backendproject2
 npm install
 ```
 
-Create a local `.env` file:
+Copy `.env.example` to `.env` and set your values:
 
-```text
+```env
 MONGO_URI=mongodb://127.0.0.1:27017/notes
 PORT=3000
 ```
 
-Start the API:
+Start the server:
 
 ```bash
 npm start
 ```
 
-## Endpoints
+## API
 
-| Method | Route | Description |
+| Method | Endpoint | Purpose |
 | --- | --- | --- |
 | `POST` | `/notes` | Create a note |
-| `GET` | `/notes` | List all notes |
+| `GET` | `/notes` | List notes |
 | `PATCH` | `/notes/:id` | Update a note description |
 | `DELETE` | `/notes/:id` | Delete a note |
 
-Example request:
+Example body:
 
-```bash
-curl -X POST http://localhost:3000/notes \
-  -H "Content-Type: application/json" \
-  -d '{"title":"Persistent note","description":"Stored in MongoDB"}'
+```json
+{
+  "title": "Project idea",
+  "description": "Build a documented REST API"
+}
 ```
 
-## Security
+## Built with
 
-Keep database credentials in environment variables. Do not commit `.env` files or connection strings containing usernames and passwords.
+`Node.js` `Express` `MongoDB` `Mongoose`
