@@ -1,9 +1,3 @@
-echo node_modules/ > .gitignore
-echo .env >> .gitignore
-```
-
-Or create `.gitignore` file manually with this content:
-```
 node_modules/
 .env
 .DS_Store
